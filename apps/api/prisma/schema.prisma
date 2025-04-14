@@ -19,3 +19,29 @@ model Sample {
 
   @@map("samples") // if you want to use snake_case format
 }
+
+model User {
+  id              String    @id @default(cuid())
+  username        String
+  email           String    @unique
+  password        String
+  messageSent     Message[] @relation("MessageSent")
+  messageReceived Message[] @relation("MessageReceived")
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+
+  @@map("users")
+}
+
+model Message {
+  id         String   @id @default(cuid())
+  content    String
+  sender     User?    @relation("MessageSent", fields: [senderId], references: [id])
+  senderId   String?
+  receiver   User?    @relation("MessageReceived", fields: [receiverId], references: [id])
+  receiverId String?
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  @@map("messages")
+}

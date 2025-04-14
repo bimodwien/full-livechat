@@ -13,16 +13,16 @@
   "devDependencies": {
     "@commitlint/cli": "^19.8.0",
     "@commitlint/config-conventional": "^19.8.0",
-    "eslint": "^9.22.0",
+    "eslint": "^9.24.0",
     "husky": "^9.1.7",
-    "lint-staged": "^15.4.3",
+    "lint-staged": "^15.5.1",
     "prettier": "^3.5.3",
-    "tsc-alias": "^1.8.11",
+    "tsc-alias": "^1.8.15",
     "tsconfig": "*",
-    "turbo": "^2.4.4"
+    "turbo": "^2.5.0"
   },
   "name": "finpro-nextjs-express-prisma",
-  "packageManager": "npm@11.2.0",
+  "packageManager": "npm@11.3.0",
   "workspaces": [
     "apps/*",
     "packages/*"
